@@ -1,8 +1,10 @@
 ---
-title: Assignment 1
-subtitle: Computer performance, reliability, and scalability calculation
-author: Matt Kline
-output: pdf_document
+title: "Assignment1"
+author: "Matt Kline"
+date: "6/12/2021"
+output:
+  word_document: default
+  pdf_document: default
 ---
 
 ## 1.2 

@@ -1,0 +1,151 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Assignment1},
+  pdfauthor={Matt Kline},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs}
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+
+\title{Assignment1}
+\author{Matt Kline}
+\date{6/12/2021}
+
+\begin{document}
+\maketitle
+
+\hypertarget{section}{%
+\subsection{1.2}\label{section}}
+
+\hypertarget{a.-data-sizes}{%
+\paragraph{a. Data Sizes}\label{a.-data-sizes}}
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule
+Data Item & Size per Item\tabularnewline
+\midrule
+\endhead
+128 character message. & 128 Bytes\tabularnewline
+1024x768 PNG image & 0.75 MB\tabularnewline
+1024x768 RAW image & 2.25 MB\tabularnewline
+HD (1080p) HEVC Video (15 minutes) & 85995.52 MB\tabularnewline
+HD (1080p) Uncompressed Video (15 minutes) & 171991.04 MB\tabularnewline
+4K UHD HEVC Video (15 minutes) & 343961.6 MB\tabularnewline
+4k UHD Uncompressed Video (15 minutes) & 687923.2 MB\tabularnewline
+Human Genome (Uncompressed) & 0.7 GB\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{b.-scaling}{%
+\paragraph{b. Scaling}\label{b.-scaling}}
+
+\begin{longtable}[]{@{}lrr@{}}
+\toprule
+& Size & \# HD\tabularnewline
+\midrule
+\endhead
+Daily Twitter Tweets (Uncompressed) & 12TB & 1.2\tabularnewline
+Daily Twitter Tweets (Snappy Compressed) & 6TB & 0.6\tabularnewline
+Daily Instagram Photos & 10TB & 1\tabularnewline
+Daily YouTube Videos & 1PB & 100\tabularnewline
+Yearly Twitter Tweets (Uncompressed) & 4.38PB & 438\tabularnewline
+Yearly Twitter Tweets (Snappy Compressed) & 2.19PB & 219\tabularnewline
+Yearly Instagram Photos & 3.65PB & 365\tabularnewline
+Yearly YouTube Videos & 365PB & 36500\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{c.-reliability}{%
+\paragraph{c.~Reliability}\label{c.-reliability}}
+
+\begin{longtable}[]{@{}lrr@{}}
+\toprule
+& \# HD & \# Failures\tabularnewline
+\midrule
+\endhead
+Twitter Tweets (Uncompressed) & 438 & 4.07\tabularnewline
+Twitter Tweets (Snappy Compressed) & 219 & 2.03\tabularnewline
+Instagram Photos & 365 & 3.39\tabularnewline
+YouTube Videos & 36500 & 340\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{d.-latency}{%
+\paragraph{d.~Latency}\label{d.-latency}}
+
+\begin{longtable}[]{@{}lr@{}}
+\toprule
+& One Way Latency\tabularnewline
+\midrule
+\endhead
+Los Angeles to Amsterdam & 140.340 ms\tabularnewline
+Low Earth Orbit Satellite & 270 ms\tabularnewline
+Geostationary Satellite & 270 ms\tabularnewline
+Earth to the Moon & 1300 ms\tabularnewline
+Earth to Mars & about 20 minutes\tabularnewline
+\bottomrule
+\end{longtable}
+
+\end{document}
